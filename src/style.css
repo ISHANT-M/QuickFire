@@ -1,0 +1,32 @@
+#root {
+  font-family: Lato, sans-serif;
+  margin: 50px;
+}
+
+#root_header {
+  display: flex;
+  justify-content: center;
+}
+
+#mlsc-logo {
+  margin-top: 0px;
+}
+
+#root_box {
+  font-style: bold;
+  height: 65vh;
+  padding: 30px;
+  border: 5px solid black;
+  border-radius: 27.5px;
+  margin-top: 50px;
+}
+
+#root_header > .title {
+  font-size: 86px;
+  font-weight: bold;
+}
+
+#root_box > .question {
+  font-size: 32px;
+  font-weight: bold;
+}
