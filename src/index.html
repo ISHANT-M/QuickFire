@@ -11,14 +11,18 @@
       href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <script
+      src="https://kit.fontawesome.com/ee389b6bea.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <div id="root">
       <div id="root_header">
-        <span class="title">Quizzz&emsp;&emsp;</span>
+        <span class="title">QuickFire</span>
         <img
-          id="mlsc-logo"
+          class="mlsc-logo"
           src="https://mlsctiet.com/assets/mlsc-logo-Dm8vot8r.png"
           height="120px"
           width="120px"
@@ -27,11 +31,31 @@
       </div>
 
       <div id="root_box">
-        <span class="question"
-          >In *Interstellar*, what is the name of the robot that accompanies
-          Cooper and his crew on their mission? Hello, hi how are you?</span
-        >
+        <span class="question">
+          <!-- In *Interstellar*, what is the name of the robot that accompanies
+          Cooper and his crew on their mission? Hello, hi how are you? -->
+        </span>
+        <div class="options">
+          <!-- <span class="option">HAL</span>
+          <span class="option">TARS</span>
+          <span class="option">WALL-E</span>
+          <span class="option">EVA</span> -->
+        </div>
+        <div class="footer">
+          <span class="timer-box">
+            <i class="fa-solid fa-hourglass-end"></i>&nbsp;
+            <span class="timer">00:10</span>
+          </span>
+          <span class="submit">
+            SUBMIT
+            <i class="fa-solid fa-chevron-right"></i>
+          </span>
+        </div>
         <!-- Quiz will be added here -->
+      </div>
+
+      <div id="root_footer">
+        <span id="root_footer_text">Created by XYZ</span>
       </div>
     </div>
   </body>

@@ -1,3 +1,22 @@
+function getRandomQuestion(quizQuestions) {
+  let questionIndex = Math.floor(Math.random() * quizQuestions.length);
+  return quizQuestions[questionIndex];
+}
+
+function getQuestions(quizQuestions) {
+  let genQuestions = [];
+  while (true) {
+    const question = getRandomQuestion(quizQuestions);
+    if (!genQuestions.includes(question)) {
+      genQuestions.push(question);
+    }
+    if (genQuestions.length === 5) {
+      break;
+    }
+  }
+  return genQuestions;
+}
+
 const quizQuestions = [
   {
     question: "Who is the General Secretary of MLSC?",

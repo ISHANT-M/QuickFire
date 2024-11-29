@@ -1,24 +1,17 @@
+body {
+  margin: 0;
+}
+
 #root {
+  /* background-color: #1f2a62; */
   font-family: Lato, sans-serif;
-  margin: 50px;
 }
 
 #root_header {
   display: flex;
   justify-content: center;
-}
-
-#mlsc-logo {
-  margin-top: 0px;
-}
-
-#root_box {
-  font-style: bold;
-  height: 65vh;
-  padding: 30px;
-  border: 5px solid black;
-  border-radius: 27.5px;
-  margin-top: 50px;
+  gap: 75px;
+  margin: 50px;
 }
 
 #root_header > .title {
@@ -26,7 +19,81 @@
   font-weight: bold;
 }
 
+.mlsc-logo {
+  margin-top: 0px;
+}
+
+#root_box {
+  font-style: bold;
+  height: 65vh;
+  padding: 30px;
+  border: 5px solid #213a62;
+  border-radius: 27.5px;
+  margin: 250px;
+  margin-top: 50px;
+  margin-bottom: 250px;
+  background-color: #b5f0fa;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 #root_box > .question {
   font-size: 32px;
   font-weight: bold;
+}
+
+#root_box > .options {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 20px;
+  /* margin-top: 70px; */
+  /* margin-bottom: 115px; */
+  font-size: 24px;
+  font-weight: 400;
+}
+
+#root_box > .options > .option {
+  cursor: pointer;
+  border: 2px solid #213a62;
+  padding: 10px;
+  border-radius: 17.5px;
+  background-color: white;
+}
+
+#root_box > .options > .option:hover {
+  background-color: #213a62;
+  color: white;
+}
+
+#root_box > .options > .option:active {
+  background-color: greenyellow;
+  color: black;
+}
+
+#root_box > .footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 24px;
+  font-weight: 400;
+  padding-bottom: 2px;
+}
+
+#root_box > .footer > .timer-box {
+  color: #213a62;
+}
+
+#root_box > .footer > .submit {
+  cursor: pointer;
+  color: #213a62;
+}
+
+#root_footer {
+  color: #51e2ff;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding: 50px;
+  height: 40vh;
+  background-color: #213a62;
 }
