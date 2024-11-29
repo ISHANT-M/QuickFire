@@ -1,10 +1,14 @@
 body {
   margin: 0;
+  padding: 0;
+  font-family: Lato, sans-serif;
 }
 
 #root {
-  /* background-color: #1f2a62; */
-  font-family: Lato, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #root_header {
@@ -15,17 +19,20 @@ body {
 }
 
 #root_header > .title {
-  font-size: 86px;
+  font-size: 5.4em;
   font-weight: bold;
 }
 
 .mlsc-logo {
   margin-top: 0px;
+  height: 120px;
+  width: 120px;
 }
 
 #root_box {
   font-style: bold;
   height: 65vh;
+  width: 65vw;
   padding: 30px;
   border: 5px solid #213a62;
   border-radius: 27.5px;
@@ -41,6 +48,7 @@ body {
 #root_box > .question {
   font-size: 32px;
   font-weight: bold;
+  overflow-wrap: break-word;
 }
 
 #root_box > .options {
@@ -90,10 +98,86 @@ body {
 }
 
 #root_footer {
-  color: #51e2ff;
-  margin-left: 0px;
-  margin-right: 0px;
-  padding: 50px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
   height: 40vh;
+  width: 100vw;
   background-color: #213a62;
+}
+
+#root_footer #credits {
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 40vh;
+  width: 100vw;
+  background-color: #213a62;
+}
+
+#root_footer #credits a:link,
+#root_footer #credits a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+#root_footer #credits > .left-pane {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: normal;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+#root_footer #credits > .middle-pane {
+  height: 8em;
+  border: 1px solid white;
+}
+
+#root_footer #credits > .right-pane {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: normal;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+#root_footer .github-repo,
+#root_footer .github-repo a:link,
+#root_footer .github-repo a:visited {
+  padding: 2em;
+  padding-left: 4px;
+  font-size: 1em;
+  color: white;
+  text-decoration: none;
+}
+
+@media (max-width: 480px) {
+  #root_header {
+    gap: 15px;
+    margin: 20px;
+  }
+
+  #root_header > .title {
+    font-size: 3.6rem;
+  }
+
+  .mlsc-logo {
+    margin-top: 0px;
+    height: 70px;
+    width: 70px;
+  }
+
+  #root_footer .github-repo,
+  #root_footer .github-repo a:link,
+  #root_footer .github-repo a:visited {
+    padding: 2em;
+  }
 }
