@@ -12,10 +12,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./style.css" />
-    <script
-      src="https://kit.fontawesome.com/ee389b6bea.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.1/js/all.min.js"></script>
   </head>
   <body>
     <div id="root">
@@ -28,7 +25,37 @@
         />
       </div>
 
+      <div id="overlay">
+        <div class="ov-container">
+          <img
+            class="correct"
+            style="display: none"
+            src="./../assets/correct.webp"
+            alt="correct-gif"
+            height="360px"
+            width="360px"
+          />
+          <img
+            class="wrong"
+            style="display: none"
+            src="./../assets/wrong.webp"
+            alt="wrong-gif"
+            height="360px"
+            width="360px"
+          />
+          <img
+            class="none"
+            style="display: none"
+            src="./../assets/none.webp"
+            alt="none-gif"
+            height="360px"
+            width="360px"
+          />
+        </div>
+      </div>
+
       <div id="root_box">
+        <!-- Quiz will be added here -->
         <span class="question">
           <!-- In *Interstellar*, what is the name of the robot that accompanies
           Cooper and his crew on their mission? Hello, hi how are you? -->
@@ -49,7 +76,6 @@
             <i class="fa-solid fa-chevron-right"></i>
           </span>
         </div>
-        <!-- Quiz will be added here -->
       </div>
 
       <div id="root_footer">

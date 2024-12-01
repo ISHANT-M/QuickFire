@@ -41,8 +41,38 @@ function startTimer() {
   return timerInterval;
 }
 
-function onSubmit(submittedAnswer) {
-  console.log(submittedAnswer);
+function showOverlay(submittedAnswer) {
+  let correctElement = document.querySelector(
+    "#overlay > .ov-container > .correct"
+  );
+  let wrongElement = document.querySelector(
+    "#overlay > .ov-container > .wrong"
+  );
+  let noneElement = document.querySelector("#overlay > .ov-container > .none");
+
+  if (submittedAnswer == Answer.CORRECT) {
+    correctElement.style = "display: block;";
+    wrongElement.style = "display: none;";
+    noneElement.style = "display: none;";
+  } else if (submittedAnswer == Answer.WRONG) {
+    correctElement.style = "display: none;";
+    wrongElement.style = "display: block;";
+    noneElement.style = "display: none;";
+  } else if (submittedAnswer == Answer.NONE) {
+    correctElement.style = "display: none;";
+    wrongElement.style = "display: none;";
+    noneElement.style = "display: block;";
+  }
+
+  const overlay = document.getElementById("overlay");
+  overlay.classList.add("show");
+  isOverlayShown = true;
+}
+
+function hideOverlay() {
+  const overlay = document.getElementById("overlay");
+  overlay.classList.remove("show");
+  isOverlayShown = false;
 }
 
 function onQuizComplete() {
@@ -72,24 +102,29 @@ function main() {
       submittedAnswer = Answer.CORRECT;
     }
 
-    onSubmit(submittedAnswer);
+    /* On Submitting Answer */
+    console.log(submittedAnswer);
+    showOverlay(submittedAnswer);
+    setTimeout(() => {
+      hideOverlay();
 
-    questionCounter += 1;
-    if (questionCounter > 4) {
-      quizComplete = true;
-    }
-    if (quizComplete) {
-      onQuizComplete();
-      return;
-    }
-    createQuestionElement(
-      questElement,
-      optionsElement,
-      questions[questionCounter]
-    );
-    clearInterval(timerId);
-    timerId = startTimer();
-    chosenAnswerIndex = null;
+      questionCounter += 1;
+      if (questionCounter > 4) {
+        quizComplete = true;
+      }
+      if (quizComplete) {
+        onQuizComplete();
+        return;
+      }
+      createQuestionElement(
+        questElement,
+        optionsElement,
+        questions[questionCounter]
+      );
+      clearInterval(timerId);
+      timerId = startTimer();
+      chosenAnswerIndex = null;
+    }, 2000);
   });
 
   startTimer();
@@ -107,4 +142,5 @@ const Answer = {
   CORRECT: 1,
 };
 let chosenAnswerIndex = null;
+let isOverlayShown = false;
 main();
