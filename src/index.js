@@ -35,7 +35,7 @@ function startTimer() {
     timerElement.textContent = `00:0${timerCounter}`;
     if (timerCounter == 0) {
       clearInterval(timerInterval);
-      submitBtn?.click();
+      if (!quizComplete) submitBtn?.click();
     }
   }, 1000);
   return timerInterval;
@@ -77,7 +77,10 @@ function hideOverlay() {
 
 function onQuizComplete() {
   const submitBtn = document.querySelector(SUBMIT_BTN_SELECTOR);
-  submitBtn.textContent = "RESTART";
+  submitBtn.innerHTML = `RESTART <i class="fa-solid fa-arrows-rotate"></i>`;
+  submitBtn.addEventListener("click", function () {
+    location.reload();
+  });
 }
 
 function main() {
